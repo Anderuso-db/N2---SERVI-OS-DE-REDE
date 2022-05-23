@@ -1,6 +1,6 @@
 import docker
 client = docker.from_env()
-
+#-------------------------------------------------------------------------------------------------#
 def getAllContainers():
     containerList = client.containers.list(all=True)
     #Se a chamada da api retornar os containers
@@ -15,14 +15,14 @@ def getAllContainers():
     else: print('------// NENHUM CONTAINER ENCONTRADO //------')
 
     return containerList
-
+#-------------------------------------------------------------------------------------------------#
 def createContainer(image, containerName):
     try:
         container = client.containers.create(image=image, name=containerName)
         print(f'Container criado e iniciado com sucesso! Id: {container.id}')
     except Exception as e:
         print(f'Ocorreu algum erro durante o processo de criação do container. \nErro: {e}')
-
+#-------------------------------------------------------------------------------------------------#
 def removeContainer(containerId):
     container = client.containers.get(containerId)
 
@@ -34,7 +34,7 @@ def removeContainer(containerId):
             print(f'Erro ao remover o container {container.name}. \nErro: {e}')
 
     else: print('Container não existe')
-
+#-------------------------------------------------------------------------------------------------#
 def removeAllContainers():
     containersToRemove = getAllContainers()
 
@@ -45,7 +45,7 @@ def removeAllContainers():
                 print(f'Container {container.name} removido com sucesso!')
             except Exception as e:
                 print(f'Erro ao remover o container {container.name}. \nErro: {e}')
-
+#-------------------------------------------------------------------------------------------------#
 def listImages():
     imagesList =  client.images.list()
     if imagesList:
@@ -54,21 +54,21 @@ def listImages():
             print(image)
 
     return imagesList
-
+#-------------------------------------------------------------------------------------------------#
 def pullImage(image):
     try:
         image = client.images.pull(image)
         print(f'Imagem {image} obtida com sucesso!')
     except Exception as e:
         print(f'Erro ao obter a imagem. \nErro: {e}')
-
+#-------------------------------------------------------------------------------------------------#
 def removeImage(imageName):
     try: 
         image = client.images.remove(imageName)
         print(f'Imagem {image.id} removida com sucesso!')
     except Exception as e:
         print(f'Erro ao remnover imagem. \nErro: {e}')
-
+#-------------------------------------------------------------------------------------------------#
 def removeAllImages():
     imagesToRemove =  client.images.list()
 
