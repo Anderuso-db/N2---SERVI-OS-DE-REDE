@@ -6,11 +6,11 @@ def menu():
     while not exit:
         option = input(
             '1 - Obter todos os containers\n' +
-            '2 - Criar Container\n' +
-            '3 - Remover Container\n' +
-            '4 - Remover Todos os Containers\n' +
-            '5 - Mostrar Imagens\n' + 
-            '6 - Enviar Imagem\n' +
+            '2 - Criar container\n' +
+            '3 - Remover container\n' +
+            '4 - Remover todos os containers\n' +
+            '5 - Mostrar imagens\n' + 
+            '6 - Obter Imagem\n' +
             '7 - Excluir Imagem\n' +
             '8 - Remover todas as Imagens\n'
             '9 - Sair\n' 
