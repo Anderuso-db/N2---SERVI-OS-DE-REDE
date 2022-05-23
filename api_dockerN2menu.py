@@ -11,7 +11,7 @@ def menu():
             '4 - Remover todos os containers\n' +
             '5 - Mostrar imagens\n' + 
             '6 - Obter Imagem\n' +
-            '7 - Excluir Imagem\n' +
+            '7 - Remover Imagem\n' +
             '8 - Remover todas as Imagens\n'
             '9 - Sair\n' 
         )
