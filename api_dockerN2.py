@@ -19,7 +19,6 @@ def getAllContainers():
 def createContainer(image, containerName):
     try:
         container = client.containers.create(image=image, name=containerName)
-        client.containers.run(container.image, container.name)
         print(f'Container criado e iniciado com sucesso! Id: {container.id}')
     except Exception as e:
         print(f'Ocorreu algum erro durante o processo de criação do container. \nErro: {e}')
